@@ -11,11 +11,22 @@
   <div class="container">
       <h1>ANGULAR JS examples</h1>
   </div><hr>
-<div class="py-3 container border" ng-controller = 'nameCalculator'>
-  <h1>NAME CALCULATOR</h1>
-  Enter your name: <input class="form-group" ng-model="name" type="text" ng-keyup="displayNumeric();"><br>
-  Numeric Value of the Person: {{totalValue}}
-</div>
+<ul class="list-group">
+<li class="list-item-group">
+  <div class="py-3 container border" ng-controller = 'nameCalculator'>
+    <h1>NAME CALCULATOR</h1>
+    Enter your name: <input class="form-group" ng-model="name" type="text" ng-keyup="displayNumeric();"><br>
+    Numeric Value of the Person: {{totalValue}}
+  </div>
+</li>
+<li class="list-item-group">
+
+  <div class="py-3 container border" ng-controller='DIController'>
+      <h1>Dependency Injection in Javascript(and AngularJS)</h1>
+    <input type="text" ng-model="name" ng-blur="upper();"><br>removing the focus from the text box capitalise the string
+  </div>
+</li>
+</ul>
 
   </body>
 </html>
