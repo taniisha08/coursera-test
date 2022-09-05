@@ -12,6 +12,7 @@
       <h1>ANGULAR JS examples</h1>
   </div><hr>
 <ul class="list-group">
+
 <li class="list-item-group">
   <div class="py-3 container border" ng-controller = 'nameCalculator'>
     <h1>NAME CALCULATOR</h1>
@@ -19,11 +20,29 @@
     Numeric Value of the Person: {{totalValue}}
   </div>
 </li>
-<li class="list-item-group">
 
+<li class="list-item-group">
   <div class="py-3 container border" ng-controller='DIController'>
       <h1>Dependency Injection in Javascript(and AngularJS)</h1>
     <input type="text" ng-model="name" ng-blur="upper();"><br>removing the focus from the text box capitalise the string
+  </div>
+</li>
+
+<li class="list-item-group">
+  <div class="py-3 container border" ng-controller='imageController'>
+      <h1>Expressions and Interpolation</h1>
+      Light the bulb:
+    <button class="btn btn-sm btn-dark" ng-click='switchOn()'>ON</button>
+    <button class="btn btn-sm btn-dark" ng-click='switchOff()'>OFF</button><br>
+  <img style="height:210px" ng-src="images/{{state}}.png">
+  </div>
+</li>
+
+<li class="list-item-group">
+  <div class="py-3 container border">
+      <h1>Coding assignment-1</h1>
+  pending
+
   </div>
 </li>
 </ul>

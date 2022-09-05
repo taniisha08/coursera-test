@@ -19,26 +19,34 @@ function calculateNumericString(string){
 }
 
 })
+.controller('imageController',function($scope){
+  $scope.state = 'off';
+  $scope.switchOn = function() {
+    $scope.state = 'on';
+  }
+  $scope.switchOff = function() {
+    $scope.state = 'off';
+  }
+})
 
 .controller('DIController', DIController);
 
 function DIController ($scope,
                        $filter,
                        $injector) {
-  $scope.name = "tanisha tomar";
+  $scope.name = "tanisha";
 
   $scope.upper = function () {
     var upCase = $filter('uppercase');
     $scope.name = upCase($scope.name);
   };
 
-  console.log($injector.annotate(DIController));
+  // console.log($injector.annotate(DIController));
 }
 
-function AnnonateMe(name, job, blah) {
-  return "Blah!";
-}
-
-console.log(DIController.toString());
+// function AnnonateMe(name, job, blah) {
+//   return "Blah!";
+// }
+// console.log(DIController.toString());
 
 })();
