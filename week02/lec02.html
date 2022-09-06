@@ -12,17 +12,59 @@
       <h1>ANGULAR JS examples</h1>
   </div><hr>
 <ul class="list-group">
-
-
-
 <li class="list-item-group">
   <div class="py-3 container border" ng-controller='msgController'>
-    <h1>custom filters</h1>
+    <h2>Filters</h2>
     Enter your Message: <input type="text" ng-model='message' class='form-group' style="width:350px"><br><br>
+    built in filters:
     <button class="btn btn-primary" ng-click="upcase()">upcase</button>
-    <button class="btn btn-danger" ng-click='lowercase()'>lowercase</button>
-    <button class="btn btn-warning" ng-click='removeSpace()'>remove " "</button> doubt in creating custom filters<br><br>
+    <button class="btn btn-danger" ng-click='lowercase()'>lowercase</button><br><br>
+    custom filters:
+    <button class="btn btn-warning" ng-click='removeSpace()'>remove " "</button>
+    <button class="btn btn-info" ng-click='calcValue()'>Calculate Value</button>
+    <br><br>
     <h4>Result : {{result}}</h4>
+  </div>
+</li>
+
+<li class="list-item-group">
+  <div class="py-3 container border" ng-controller='counterController'>
+    <h2>Digest Cycle</h2>
+  <button class="btn btn-md btn-primary" ng-click='upCounter()'>Increment</button>
+  Count :{{count}} <br>
+  using $watch() to check the value
+  <p>old Value : {{oldValue}}, new Value : {{newValue}}</p>
+  </div>
+</li>
+<li class="list-item-group">
+  <div class="py-3 container border" ng-controller='bindingController'>
+    <h2>1-way 2-way and 1-time Bindings</h2>
+    2-way binding: <input type="text" ng-model='name'> name : {{name}}<br>
+    1-way binding: {{firstName}}<br>
+    1-time binding: {{::fullName}}      <span style='color:red'>(doubt)</span>
+     <br><button class="btn btn-sm btn-dark">Set full name</button>
+  </div>
+</li>
+<li class="list-item-group">
+  <div class="py-3 container border" ng-controller='loopController'>
+    <h2>ng-repeat (grocery list)</h2>
+  <table class='table border'>
+<thead>
+  <td>Serial No.</td>
+  <td>Item</td>
+  <td>Quantity</td>
+</thead>
+<tbody>
+<tr ng-repeat='item in groceryList'>
+<td>{{$index + 1}}</td>
+<td>{{item.name | uppercase}}</td>
+<td>{{item.quantity}}</td>
+</tr>
+</tbody>
+  </table>
+<input type="text" placeholder="add item Name" ng-model='newItemName'>
+<input type='text' placeholder='add item quantity' ng-model='newItemQuantity'>
+<button class="btn btn-sm btn-success" ng-click='addItem()'>add item</button>
   </div>
 </li>
 </ul>
